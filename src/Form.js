@@ -5,6 +5,11 @@ export const Form = ({ text, handleChange, addToList }) => {
     <div className="form">
       <input
         onChange={handleChange}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter') {
+            addToList();
+          }
+        }}
         value={text}
         placeholder="Whats on your mind?"
         required
